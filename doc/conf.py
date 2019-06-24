@@ -20,12 +20,6 @@ import os
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.abspath('..'))
 
-# For some reason jpype.imports does not work if called in sphinx. Importing
-# it here solved the problem.
-import _jpype
-import jpype
-import jpype.imports
-
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -62,11 +56,15 @@ import mock
 mock_modules = ('_jpype',)
 for m in mock_modules:
     sys.modules[m] = mock.MagicMock()
-
+# For some reason jpype.imports does not work if called in sphinx. Importing
+# it here solved the problem.
 import jpype
+import jpype.imports
+
 import java.lang
 import java.util
 import java.io
+
 version = jpype.__version__
 # The full version, including alpha/beta/rc tags.
 release = jpype.__version__
