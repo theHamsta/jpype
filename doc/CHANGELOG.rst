@@ -6,6 +6,7 @@ This changelog *only* contains changes from the *first* pypi release (0.5.4.3) o
 - **Next version - unreleased**
 
 - **0.7.0 - 2019**
+
   - Doc strings are generated for classes and methods.
 
   - Complete rewrite of the core module code to deal unattached threads,
